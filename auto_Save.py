@@ -1,7 +1,9 @@
 import os
 import datetime
 
-message = f"Auto-commit on {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+commit_message = f"Auto-save on {now}"
+
 os.system("git add .")
-os.system(f'git commit -m "{message}"')
-os.system("git push")
+os.system(f'git commit -m "{commit_message}"')
+os.system("git push origin main")
